@@ -3,6 +3,7 @@ package com.kollus.se.kollusplayer;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -19,11 +20,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.kollus.se.kollusplayer.kollusapi.VideoUrlCreator;
+import com.kollus.se.kollusplayer.kollusapi.jwt.JwtGenerator;
+import com.kollus.se.kollusplayer.kollusapi.jwt.McGenerator;
+import com.kollus.se.kollusplayer.player.MovieActivity;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
@@ -53,6 +61,26 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         Glide.with(viewHolder.cardView).load(imgUri).into(viewHolder.imageView);
         viewHolder.textView.setText(cardData.text);
         viewHolder.mckView.setText(cardData.mck);
+        viewHolder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, MovieActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP| Intent.FLAG_ACTIVITY_NEW_TASK);
+                Uri play_uri = null;
+
+                try {
+                     play_uri = VideoUrlCreator.createUrl("catenoid", cardData.mck);
+                } catch (NoSuchAlgorithmException e) {
+                    e.printStackTrace();
+                } catch (InvalidKeyException e) {
+                    e.printStackTrace();
+                } catch (JsonProcessingException e) {
+                    e.printStackTrace();
+                }
+                intent.setData(play_uri);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
