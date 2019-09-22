@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">KollusPlayer</string>
+    <string name="native_view">Native View</string>
+    <string name="poster">Poster</string>
+</resources>
