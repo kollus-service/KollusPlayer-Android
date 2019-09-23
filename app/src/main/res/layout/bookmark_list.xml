@@ -49,7 +49,7 @@
 		</HorizontalScrollView>
 		   	    
 	</RelativeLayout>
-	<com.kollus.se.kollusplayer.player.view.BookmarkScrollView
+	<kollus.test.media.player.view.BookmarkScrollView
 	    android:id="@+id/bookmark_list"
 	    android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
@@ -60,5 +60,5 @@
 			android:layout_height="fill_parent"
 			android:orientation="horizontal">
 		</LinearLayout>
-	</com.kollus.se.kollusplayer.player.view.BookmarkScrollView>
+	</kollus.test.media.player.view.BookmarkScrollView>
 </LinearLayout>

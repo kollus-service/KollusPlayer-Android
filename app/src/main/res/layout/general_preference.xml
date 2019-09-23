@@ -28,7 +28,7 @@
 			android:layout_weight="1.0"
 			android:text="@string/notify_no_wifi"
 			android:textSize="16dp" />
-		<android.support.v7.widget.SwitchCompat
+		<androidx.appcompat.widget.SwitchCompat
 			android:id="@+id/notify_no_wifi"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
@@ -50,7 +50,7 @@
 			android:layout_weight="1.0"
 			android:text="@string/notify_resume_playing"
 			android:textSize="16dp" />
-		<android.support.v7.widget.SwitchCompat
+		<androidx.appcompat.widget.SwitchCompat
 			android:id="@+id/resume_playing"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
@@ -73,7 +73,7 @@
 			android:layout_weight="1.0"
 			android:text="@string/sw_codec_precedence"
 			android:textSize="16dp" />
-		<android.support.v7.widget.SwitchCompat
+		<androidx.appcompat.widget.SwitchCompat
 			android:id="@+id/sw_codec_precedence"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
@@ -144,7 +144,7 @@
 					android:text="다운로드 컨텐츠 진도률 데이터의 전송 여부를 ON/OFF합니다."
 					android:textSize="12dp"/>
 			</LinearLayout>
-			<android.support.v7.widget.SwitchCompat
+			<androidx.appcompat.widget.SwitchCompat
 				android:id="@+id/lms_precedence"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"

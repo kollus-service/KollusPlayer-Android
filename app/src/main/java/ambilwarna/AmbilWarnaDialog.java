@@ -16,7 +16,7 @@ import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import com.kollus.se.kollusplayer.R;
+import kollus.test.media.R;
 
 
 public class AmbilWarnaDialog {

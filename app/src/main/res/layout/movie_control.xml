@@ -474,7 +474,7 @@
 			android:layout_height="fill_parent"
 			android:layout_alignParentBottom="true"
 			android:focusable="false">
-			<com.kollus.se.kollusplayer.player.TimeBar
+			<kollus.test.media.player.TimeBar
 			    android:id="@+id/timebar"
 			    android:layout_width="fill_parent"
 				android:layout_height="40dip"

@@ -96,7 +96,7 @@
 			android:layout_weight="1.0"
 			android:text="@string/stroke_color"
 			android:textSize="16dp" />
-		<android.support.v7.widget.SwitchCompat
+		<androidx.appcompat.widget.SwitchCompat
 		    android:id="@+id/stroke"
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
@@ -122,7 +122,7 @@
 			android:layout_weight="1.0"
 			android:text="@string/caption_background_color"
 			android:textSize="16dp" />
-		<android.support.v7.widget.SwitchCompat
+		<androidx.appcompat.widget.SwitchCompat
 			android:id="@+id/caption_bg"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
