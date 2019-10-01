@@ -47,6 +47,8 @@ public interface ControllerOverlay {
         void onTimeShiftOff();
 
         void onLayoutChange(View v, int left, int top, int right, int bottom);
+
+        void onChangeSub();
     }
 
     public static final int REPEAT_MODE_DISABLE = 0;

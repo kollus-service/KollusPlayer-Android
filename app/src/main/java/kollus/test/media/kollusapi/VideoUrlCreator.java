@@ -26,7 +26,7 @@ public class VideoUrlCreator {
                 .mc(mcGenerator.build())
                 .secret_key(KollusConstant.KOLLUS_SECRET_KEY)
                 .generate();
-        play_uri = String.format("https://v.kr.kollus.com/si?jwt=%s&custom_key=%s",token, KollusConstant.KOLLUS_CUSTOM_KEY);
+        play_uri = String.format("https://v.kr.kollus.com/si?jwt=%s&custom_key=%s&purge_cache",token, KollusConstant.KOLLUS_CUSTOM_KEY);
 
         return Uri.parse(String.format("kollus://path?url=%s", play_uri));
 //        return Uri.parse(String.format("kollus://path?url=%s", URLEncoder.encode(play_uri, "utf-8")));

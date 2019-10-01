@@ -38,6 +38,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
@@ -217,6 +218,8 @@ public abstract class CommonControllerOverlay implements
     protected boolean mTalkbackEnabled;
     private Random mRandom = new Random();
 
+    private Button btnChange;
+
     private final int mVideoWaterMarkAlign[] = {
             RelativeLayout.ALIGN_PARENT_LEFT,
             RelativeLayout.CENTER_HORIZONTAL,
@@ -244,6 +247,8 @@ public abstract class CommonControllerOverlay implements
         });
         mRootView.addView(mControlView);
 
+
+
         mResources = context.getResources();
         DisplayMetrics dm = new DisplayMetrics();
         WindowManager wm = (WindowManager) mContext.getSystemService(WINDOW_SERVICE);
@@ -259,6 +264,14 @@ public abstract class CommonControllerOverlay implements
 
         float scale = dm.density/DEFAULT_DENSITY;
         SCREEN_SHOT_HEIGHT = (int) (SCREEN_SHOT_HEIGHT*scale);
+
+        btnChange = (Button)mControlView.findViewById(R.id.change_sub);
+        btnChange.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mListener.onChangeSub();
+            }
+        });
 
         mMainLayout = mControlView.findViewById(R.id.main_layout);
         mTitleView = (LinearLayout)mControlView.findViewById(R.id.title_layout);
@@ -860,6 +873,9 @@ public abstract class CommonControllerOverlay implements
                     mSkipLayer.setVisibility(View.GONE);
                     mListener.onSkip();
                 }
+            }
+            else if(view == btnChange){
+                mListener.onChangeSub();
             }
         }
     }

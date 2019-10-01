@@ -100,6 +100,13 @@
 					android:layout_height="wrap_content"
 					android:background="@drawable/ic_screen_fullscreen"
 					android:contentDescription="@string/talkback_screen_full"/>
+
+				<Button
+					android:id="@+id/change_sub"
+					android:layout_width="124dp"
+					android:layout_height="36dp"
+					android:layout_weight="1"
+					android:text="자막변경" />
 			</LinearLayout>
 
 			<LinearLayout

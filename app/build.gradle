@@ -37,7 +37,9 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.6.1'
     implementation 'com.jayway.jsonpath:json-path:2.4.0'
     implementation 'com.github.bumptech.glide:glide:4.10.0'
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.10.0.pr3'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.9.7'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.9.7'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.7'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
     implementation project(path: ':kollusplayer_sdk-release')
 }

@@ -10,7 +10,7 @@ public class KollusConstant {
 
     public static final String KOLLUS_API_URI = "https://api.kr.kollus.com/0/media/";
 
-    public static final String KOLLUS_CHANNEL_KEY = "zinl1xxboab1ykrs";
+    public static final String KOLLUS_CHANNEL_KEY = "6ji5ap2k";
 
     public static final String KOLLUS_SDK_KEY = "99c8d382df6ec620746a086db0b09d58f6eaa019";
     public static final String KOLLUS_SDK_EXPIRE_DATE = "2019/12/31";

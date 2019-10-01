@@ -89,6 +89,7 @@ import kollus.test.media.player.preference.KollusConstants;
 import kollus.test.media.player.util.DisplayUtil;
 import kollus.test.media.player.view.KollusAlertDialog;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -1766,6 +1767,36 @@ public class MoviePlayer implements
     public void onLayoutChange(View v, int left, int top, int right, int bottom) {
         if(mVideoView != null)
             mVideoView.adjustVideoWaterMarkPosition(left, top, right, bottom);
+    }
+
+    private int subtitleIndex = -1;
+    private int sizeSubtitle = 0;
+    @Override
+    public void onChangeSub() {
+        Log.i(TAG, "Click change sub");
+        Vector<SubtitleInfo> subtitleinfos = mKollusContent.getSubtitleInfo();
+        Log.d(TAG, subtitleinfos.toString());
+        sizeSubtitle = subtitleinfos.size();
+        if (sizeSubtitle > 0){
+            if(subtitleIndex >= sizeSubtitle - 1){
+               subtitleIndex = 0;
+            }
+            else {
+                subtitleIndex += 1;
+            }
+            SubtitleInfo si = subtitleinfos.get(subtitleIndex);
+            Log.d(TAG, si.url);
+            try {
+                mVideoView.addTimedTextSource(Uri.parse(si.url));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        else {
+
+        }
+
+
     }
 
     private void showMessage(String msg) {

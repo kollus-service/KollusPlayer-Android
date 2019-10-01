@@ -29,6 +29,7 @@ public class KollusBaseActivity extends Activity {
 
     protected void initStorage() {
         kollusStorage = KollusStorage.getInstance(getApplicationContext());
+        Log.d(TAG, kollusStorage.getVersion());
         if(!kollusStorage.isReady()){
             int ret = kollusStorage.initialize(KollusConstant.KOLLUS_SDK_KEY, KollusConstant.KOLLUS_SDK_EXPIRE_DATE, KollusBaseActivity.this.getPackageName());
             if(ret != ErrorCodes.ERROR_OK){
